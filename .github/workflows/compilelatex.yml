@@ -2,9 +2,11 @@ name: Compile Latex and Release PDF
 
 on:
   push:
+    branches:    
+      - main
     tags:
       - '*.*.*'
-    
+
 jobs:
   build_latex:
     runs-on: ubuntu-latest
