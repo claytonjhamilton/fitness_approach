@@ -43,8 +43,9 @@ jobs:
       - name: Commit file
         uses: actions/checkout@v2
         run: date +%s > routine.pdf
-        run: git config --global user.name 'Clayton J. Hamilton, PharmD'
-        run: git config --global user.email 'claytonjhamilton@users.noreply.github.com'
-        run: git add .
-        run: git commit -am "Automated latex pdf generation"
-        run: git push
+        run: |
+        git config --global user.name 'Clayton J. Hamilton, PharmD'
+        git config --global user.email 'claytonjhamilton@users.noreply.github.com'
+        git add .
+        git commit -am "Automated latex pdf generation"
+        git push
