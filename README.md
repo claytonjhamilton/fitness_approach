@@ -2,4 +2,4 @@
 
 # Approach to Rock Climbing and General Fitness
 
-This is mainly a reason to experiment with GitHub actions with the added benefit of exploring Latex in the process.
+This is mainly a reason to experiment with GitHub actions with the added benefit of exploring Latex in the process. Check the releases for the latest compiled .pdf file.
