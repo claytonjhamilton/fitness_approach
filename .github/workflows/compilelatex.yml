@@ -13,22 +13,20 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
+
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
           root_file: routine.tex
  
-      - name: checkout branch
-        uses: actions/checkout@v2
-
-      - name: setup git config
+      - name: Commit files
+        if: steps.check_files.outputs.files_exists == 'true'
         run: |
-          git config user.name "gh-actions bot"
-          git config user.email "github-actions@github.com"
-
-      - name: Commit file
-        run: |
-          echo $( cd $(git rev-parse --show-cdup); pwd)
-          # git add routine.pdf
-          # git commit -m "Automated latex pdf generation"
-          # git push origin main
+          git config --local user.name "gh-actionsBot"
+          git config --local user.email "actions@github.com"
+          git add *
+          git commit -am "auto-deploy pdf"
+          git push origin main -f
+        env:
+          REPO_KEY: ${{secrets.SECRET}}
+          username: gh-actionsBot
