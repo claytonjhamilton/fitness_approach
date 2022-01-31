@@ -18,34 +18,38 @@ jobs:
         with:
           root_file: routine.tex
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.SECRET }}
-        with:
-          tag_name: ${{ github.ref }}-1
-          release_name: Release ${{ github.ref }}-1
-          draft: false
-          prerelease: false
+      # - name: Create Release
+      #   id: create_release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.SECRET }}
+      #   with:
+      #     tag_name: ${{ github.ref }}-1
+      #     release_name: Release ${{ github.ref }}-1
+      #     draft: false
+      #     prerelease: false
 
-      - name: Upload Release Asset
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.SECRET }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./routine.pdf
-          asset_name: routine.pdf
-          asset_content_type: pdf
+      # - name: Upload Release Asset
+      #   id: upload-release-asset 
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.SECRET }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }} 
+      #     asset_path: ./routine.pdf
+      #     asset_name: routine.pdf
+      #     asset_content_type: pdf
+ 
+      - name: checkout branch
+        uses: actions/checkout@v2
+
+      - name: setup git config
+        run: |
+          git config user.name "gh-actions Bot"
+          git config user.email "github-actions@github.com"
 
       - name: Commit file
-        uses: actions/checkout@v2
-        run: date +%s > routine.pdf
         run: |
-        git config --global user.name 'Clayton J. Hamilton, PharmD'
-        git config --global user.email 'claytonjhamilton@users.noreply.github.com'
-        git add .
-        git commit -am "Automated latex pdf generation"
-        git push
+          git add routine.pdf
+          git commit -m "Automated latex pdf generation"
+          git push origin main
