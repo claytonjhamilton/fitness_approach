@@ -1,3 +1,6 @@
+# Allow action to build and release latest pdf
+routine.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
