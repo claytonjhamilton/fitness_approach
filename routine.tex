@@ -9,6 +9,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[12pt, letterpaper]{article}
+\usepackage[table,xcdraw]{xcolor}
 % \usepackage[style=numeric,citestyle=apa]{biblatex} % Use citation manager
 \usepackage[backend=biber,style=numeric,sortcites,sorting=nty,backref,natbib,hyperref]{biblatex}
 \addbibresource{citations.bib} % Place formatted citations in this file using https://bioinformatics.org/texmed/
@@ -39,12 +40,53 @@
 
 Intermediate climbing ability is loosely defined as bouldering V4-V8, top rope 5.11 to 5.12, and actively climbing longer than a year.
 
-Weekly routine:
 \begin{enumerate}
       \item Climbing and climbing-specific exercises 3-4x per week
       \item Stability/Antagonist training 2x per week
       \item Aerobic exercise 1-3x per week
   \end{enumerate}
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[h]
+      \begin{tabular}{lllllll}
+      \hline
+      \multicolumn{7}{|l|}{\textbf{Climbing Routine \#1}} \\ \hline
+      \rowcolor[HTML]{C0C0C0} 
+      \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Monday} &
+        \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}Tuesday} &
+        \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}Wednesday} &
+        \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}Thursday} &
+        \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}Friday} &
+        \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}Saturday} &
+        \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}Sunday} \\ \hline
+      \multicolumn{1}{|l|}{C/SMR} &
+        \multicolumn{1}{l|}{RC/AE/SMR} &
+        \multicolumn{1}{l|}{RC/AE/SMR} &
+        \multicolumn{1}{l|}{UB/AE/SMR} &
+        \multicolumn{1}{l|}{C/SMR} &
+        \multicolumn{1}{l|}{RC} &
+        \multicolumn{1}{l|}{UB/AE} \\ \hline
+      \multicolumn{7}{|l|}{\textbf{Climbing Routine \#2}} \\ \hline
+      \rowcolor[HTML]{C0C0C0} 
+      \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Monday} &
+        \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}Tuesday} &
+        \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}Wednesday} &
+        \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}Thursday} &
+        \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}Friday} &
+        \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}Saturday} &
+        \multicolumn{1}{l|}{\cellcolor[HTML]{C0C0C0}Sunday} \\ \hline
+      \multicolumn{1}{|l|}{RC/AE/SMR} &
+        \multicolumn{1}{l|}{RC/AE/SMR} &
+        \multicolumn{1}{l|}{UB/AE/SMR} &
+        \multicolumn{1}{l|}{C/SMR} &
+        \multicolumn{1}{l|}{RC/SMR} &
+        \multicolumn{1}{l|}{UB/AE} &
+        \multicolumn{1}{l|}{C/AE} \\ \hline
+      \multicolumn{7}{l}{\begin{tabular}[c]{@{}l@{}}SMR = Self-Myofascial Release\\ UB = Upper Body\\ AE = Aerobic Exercise\\ C = Core\\ RC = Rock Climbing\end{tabular}}
+      \end{tabular}
+      \end{table}
 
 \newpage % Force a new page for looks
 
